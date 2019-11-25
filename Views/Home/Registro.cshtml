@@ -1,5 +1,5 @@
 
-@model MenuViewModel
+@model Menu
 
 <h1>Nachos</h1>
 
@@ -11,22 +11,22 @@
 <div asp-validation-summary="All"></div>
 
     <div class="form-group">
-         <label asp-form="Entrada"></label>
-          <input asp-for="Correo" class="form-control">
+         <label asp-for="Entrada"></label>
+          <input asp-for="Entrada" class="form-control">
     </div>    
 
     <div class="form-group">
-        <label asp-form="Fondo"></label>
-        <input asp-for="Fondo" class="form-control">
+        <label asp-for="Plato"></label>
+        <input asp-for="Plato" class="form-control">
     </div>    
 
     <div class="form-group">
-            <label asp-form="Bebida"></label>
+            <label asp-for="Bebida"></label>
             <input asp-for="Bebida" class="form-control">
     </div>  
     
     <div class="form-group">
-            <label asp-form="Fecha"></label>
+            <label asp-for="Fecha"></label>
             <input asp-for="Fecha" class="form-control">
     </div>    
 
