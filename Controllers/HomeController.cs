@@ -32,7 +32,7 @@ namespace PC02.Controllers
         }
         public IActionResult Index()
         {
-            var menu=_context.Menus.Where(x => x.Fecha==DateTime.Now).FirstOrDefault();
+            var menu=_context.Menus.Where(x => x.Fecha==DateTime.Now).ToList();
             //var menu=_context.Menus.Where(x => YEARWEEK(x.Fecha)==YEARWEEK(DateTime.Now));
             //var menu=_context.Menus.FromSqlRaw("select *from Menus WHERE YEARWEEK(UserPostDate) = YEARWEEK(NOW());").ToList();
             return View(menu);
