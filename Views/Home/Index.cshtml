@@ -1,7 +1,4 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
+﻿@model Menu
 
 <div class="text-center">
     <h1 class="display-4">Nacho's</h1>
@@ -21,21 +18,21 @@
     <tbody>
     <tr>
       <th scope="row">Entrada</th>
-      foreach (var p in Menu)
+      @foreach (var p in Menu)
         {
             <td>@p.Entrada</td>
         }
     </tr>
     <tr>
       <th scope="row">Plato de fondo</th>
-      foreach(var p in Menu)
+      @foreach(var p in Menu)
         {
             <td>@p.Plato</td>
         }
     </tr>
     <tr>
       <th scope="row">Postre</th>
-      foreach(var p in Menu)
+      @foreach(var p in Menu)
         {
             <td>@p.Bebida</td>
         }
