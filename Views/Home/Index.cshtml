@@ -21,25 +21,27 @@
       <th scope="row">Entrada</th>
       
       <td>@ViewBag.Lunes.Entrada</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>>@ViewBag.Martes.Entrada</td>
+      <td>>@ViewBag.Miercoles.Entrada</td>
+      <td>>@ViewBag.Jueves.Entrada</td>
+      <td>>@ViewBag.Viernes.Entrada</td>
 
     </tr>
     <tr>
       <th scope="row">Plato de fondo</th>
-      @foreach (var p in Model)
-        {
-            <td>@p.Plato</td>
-        }
+      <td>@ViewBag.Lunes.Plato</td>
+      <td>@ViewBag.Martes.Plato</td>
+      <td>@ViewBag.Miercoles.Plato</td>
+      <td>@ViewBag.Jueves.Plato</td>
+      <td>@ViewBag.Viernes.Plato</td>
     </tr>
     <tr>
-      <th scope="row">Postre</th>
-      @foreach (var p in Model)
-        {
-            <td>@p.Bebida</td>
-        }
+      <th scope="row">Bebida</th>
+      <td>@ViewBag.Lunes.Bebida</td>
+      <td>@ViewBag.Martes.Bebida</td>
+      <td>@ViewBag.Miercoles.Bebida</td>
+      <td>@ViewBag.Jueves.Bebida</td>
+      <td>@ViewBag.Viernes.Bebida</td>
     </tr>
     </tbody>
     </table>    

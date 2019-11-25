@@ -1,0 +1,38 @@
+@model CrearCuentaViewModel
+
+<h1>Crear cuenta de usuario</h1>
+
+<form>
+  <div class="form-row">
+    @if(TempData["mensaje"]!=null){
+        <div class='@TempData["tipoTexto"] my-2'>@TempData["mensaje"]</div>
+    }
+    </div>
+
+  <div class="form-row">
+    <div class="col-md-12 mb-3">
+      <label for="validationDefault03">Correo</label>
+      <input type="text" asp-for="Correo" class="form-control" id="validationDefault03" placeholder="e-mail" required>
+    </div>
+    
+  </div>
+
+ <div class="form-row">
+    
+    <div class="col-md-6 mb-3">
+      <label for="validationDefault02">Contraseña </label>
+      <input type="text" asp-for="Password1" class="form-control" id="validationDefault07" placeholder="Contraseña" value="" required>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationDefault03">Confirmar Contraseña</label>
+      <input type="text" asp-for="Password2" class="form-control" id="validationDefault08" placeholder="Contra" value="" required>
+    </div>     
+  </div>
+  
+
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+        <button class="btn btn-primary" type="submit">Enviar</button>
+  </div>
+  </div>
+</form>

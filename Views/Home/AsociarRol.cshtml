@@ -1,10 +1,11 @@
-@using 
+@using Microsoft.AspNetCore.Identity;
+
 <h1>Asociar Rol</h1>
 <form method="post">
 <div class="form-group">
     <label>Usuario</label>
     <select class="form-control" name="usuario">
-        @foreach(var item in (List<IdentiyUser>)ViewBag.Usuario)
+        @foreach(var item in (List<Usuario>)ViewBag.Usuario)
             {
                 <option value="@item.Id">@item.UserName</option>
             }
