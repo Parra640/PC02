@@ -51,8 +51,8 @@ namespace PC02
 
             services.ConfigureApplicationCookie(options =>
             {
-                options.LoginPath = "/Cuenta/Login";
-                options.AccessDeniedPath = "/Cuenta/AccesoDenegado";
+                options.LoginPath = "/home/Login";
+                options.AccessDeniedPath = "/home/AccesoDenegado";
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

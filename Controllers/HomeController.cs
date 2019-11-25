@@ -32,6 +32,7 @@ namespace PC02.Controllers
         }
         public IActionResult Index()
         {
+            
             var lunes=_context.Menus.Where(x => x.Fecha<DateTime.Now && x.Fecha.AddDays(7) > DateTime.Now && x.Fecha.DayOfWeek==DayOfWeek.Monday).FirstOrDefault();
             var martes=_context.Menus.Where(x => x.Fecha<DateTime.Now && x.Fecha.AddDays(7) > DateTime.Now && x.Fecha.DayOfWeek==DayOfWeek.Tuesday).FirstOrDefault();
             var miercoles=_context.Menus.Where(x => x.Fecha<DateTime.Now && x.Fecha.AddDays(7) > DateTime.Now && x.Fecha.DayOfWeek==DayOfWeek.Wednesday).FirstOrDefault();
