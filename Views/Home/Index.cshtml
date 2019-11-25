@@ -2,7 +2,44 @@
     ViewData["Title"] = "Home Page";
 }
 
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Nacho's</h1>
+    <h2>Menú de la semana</h2>
+    
+    <table class="table">
+    <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Lunes</th>
+      <th scope="col">Martes</th>
+      <th scope="col">Miércoles</th>
+      <th scope="col">Jueves</th>
+      <th scope="col">Viernes</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">Entrada</th>
+      foreach (var p in Model)
+        {
+            <td>@p.Entrada</td>
+        }
+    </tr>
+    <tr>
+      <th scope="row">Plato de fondo</th>
+      foreach(var p in Model)
+        {
+            <td>@p.Plato</td>
+        }
+    </tr>
+    <tr>
+      <th scope="row">Postre</th>
+      foreach(var p in Model)
+        {
+            <td>@p.Bebida</td>
+        }
+    </tr>
+    </tbody>
+    </table>    
 </div>
