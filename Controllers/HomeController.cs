@@ -32,10 +32,21 @@ namespace PC02.Controllers
         }
         public IActionResult Index()
         {
-            var menu=_context.Menus.Where(x => x.Fecha==DateTime.Now).ToList();
+            var lunes=_context.Menus.Where(x => x.Fecha<DateTime.Now && x.Fecha.AddDays(7) > DateTime.Now && x.Fecha.DayOfWeek==DayOfWeek.Monday).FirstOrDefault();
+            var martes=_context.Menus.Where(x => x.Fecha<DateTime.Now && x.Fecha.AddDays(7) > DateTime.Now && x.Fecha.DayOfWeek==DayOfWeek.Tuesday).FirstOrDefault();
+            var miercoles=_context.Menus.Where(x => x.Fecha<DateTime.Now && x.Fecha.AddDays(7) > DateTime.Now && x.Fecha.DayOfWeek==DayOfWeek.Wednesday).FirstOrDefault();
+            var jueves=_context.Menus.Where(x => x.Fecha<DateTime.Now && x.Fecha.AddDays(7) > DateTime.Now && x.Fecha.DayOfWeek==DayOfWeek.Thursday).FirstOrDefault();
+            var viernes=_context.Menus.Where(x => x.Fecha<DateTime.Now && x.Fecha.AddDays(7) > DateTime.Now && x.Fecha.DayOfWeek==DayOfWeek.Friday).FirstOrDefault();
+            ViewBag.Lunes=lunes;
+            ViewBag.Martes=martes;
+            ViewBag.Miercoles=miercoles;
+            ViewBag.Jueves=jueves;
+            ViewBag.Viernes=viernes;
+            
+            //var menu=_context.Menus.Where(x => x.Fecha>DateTime.Now && x.fecha < DateTime.Now.AddDays(7)).ToList();
             //var menu=_context.Menus.Where(x => YEARWEEK(x.Fecha)==YEARWEEK(DateTime.Now));
             //var menu=_context.Menus.FromSqlRaw("select *from Menus WHERE YEARWEEK(UserPostDate) = YEARWEEK(NOW());").ToList();
-            return View(menu);
+            return View();
         }
 
         public IActionResult Privacy()
