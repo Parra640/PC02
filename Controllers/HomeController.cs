@@ -39,6 +39,24 @@ namespace PC02.Controllers
             return View();
         }
 
+        public IActionResult Registro()
+        {
+            return View();
+        }
+
+         public IActionResult Registro(Menu x)
+        {
+                  if(ModelState.IsValid){
+                 _context.Add(x);
+                 _context.SaveChanges();
+                 return RedirectToAction("Index");
+             }
+
+            return View();
+        }
+
+
+
         public IActionResult AgregarMenu(){
 
             return View();
