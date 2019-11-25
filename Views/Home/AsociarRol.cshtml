@@ -1,0 +1,25 @@
+@using 
+<h1>Asociar Rol</h1>
+<form method="post">
+<div class="form-group">
+    <label>Usuario</label>
+    <select class="form-control" name="usuario">
+        @foreach(var item in (List<IdentiyUser>)ViewBag.Usuario)
+            {
+                <option value="@item.Id">@item.UserName</option>
+            }
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Rol</label>
+    <select class="form-control" name="rol">
+        @foreach (var item in (List<IdentityRole>)ViewBag.Roles)
+        {
+            <option value="btn btn-primary">@item.Name</option>
+        }
+    </select>
+</div>
+
+<button class="btn btn-primary">Asociar</button>
+</form>
