@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 namespace PC02.Models
 {
     public class LoginViewModel
@@ -9,7 +10,7 @@ namespace PC02.Models
 
         [Required]
         [Display(Name = "Contraseña")]
-        [Datatype(Datatype.Password)]
+        [DataType(DataType.Password)]
         public string Password{get; set;}
     }
 }
