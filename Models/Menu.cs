@@ -7,6 +7,6 @@ namespace PC02.Models
         public string Plato { get; set; }
         public string Bebida { get; set; }
         public DateTime Fecha { get; set; }
-        
+
     }
 }

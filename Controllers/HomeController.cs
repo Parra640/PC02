@@ -5,6 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PC02.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PC02.Controllers
 {
@@ -30,8 +33,9 @@ namespace PC02.Controllers
         public IActionResult Index()
         {
 
-            
-            return View();
+            var menu=_context.Menus.Where(x => YEARWEEK(x.Fecha)==YEARWEEK(DateTime.Now));
+            //var menu=_context.Menus.FromSqlRaw("select *from Menus WHERE YEARWEEK(UserPostDate) = YEARWEEK(NOW());").ToList();
+            return View(menu);
         }
 
         public IActionResult Privacy()

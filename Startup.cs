@@ -33,11 +33,26 @@ namespace PC02
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<LuzHogarContext>(
-                o => o.UseMySql("server=localhost;user=root;password=;database=LuzHogarDB;")
+            services.AddDbContext<dbContext>(
+                o => o.UseMySql("server=localhost;user=root;password=;database=PC02DB;")
             );
 
             services.AddIdentity<Usuario, IdentityRole>().AddEntityFrameworkStores<dbContext>();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings.
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+            });
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Cuenta/Login";
+                options.AccessDeniedPath = "/Cuenta/AccesoDenegado";
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
