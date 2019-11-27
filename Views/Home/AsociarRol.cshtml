@@ -5,7 +5,7 @@
 <div class="form-group">
     <label>Usuario</label>
     <select class="form-control" name="usuario">
-        @foreach(var item in (List<Usuario>)ViewBag.Usuario)
+        @foreach(var item in (List<Usuario>)ViewBag.Usuarios)
             {
                 <option value="@item.Id">@item.UserName</option>
             }

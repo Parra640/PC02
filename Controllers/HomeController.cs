@@ -32,12 +32,17 @@ namespace PC02.Controllers
         }
         public IActionResult Index()
         {
-            
-            var lunes=_context.Menus.Where(x => x.Fecha<DateTime.Now && x.Fecha.AddDays(7) > DateTime.Now && x.Fecha.DayOfWeek==DayOfWeek.Monday).FirstOrDefault();
-            var martes=_context.Menus.Where(x => x.Fecha<DateTime.Now && x.Fecha.AddDays(7) > DateTime.Now && x.Fecha.DayOfWeek==DayOfWeek.Tuesday).FirstOrDefault();
-            var miercoles=_context.Menus.Where(x => x.Fecha<DateTime.Now && x.Fecha.AddDays(7) > DateTime.Now && x.Fecha.DayOfWeek==DayOfWeek.Wednesday).FirstOrDefault();
-            var jueves=_context.Menus.Where(x => x.Fecha<DateTime.Now && x.Fecha.AddDays(7) > DateTime.Now && x.Fecha.DayOfWeek==DayOfWeek.Thursday).FirstOrDefault();
-            var viernes=_context.Menus.Where(x => x.Fecha<DateTime.Now && x.Fecha.AddDays(7) > DateTime.Now && x.Fecha.DayOfWeek==DayOfWeek.Friday).FirstOrDefault();
+            var firstDayOfWeek=DateTime.Now;
+            while(firstDayOfWeek.DayOfWeek!=DayOfWeek.Monday){
+                firstDayOfWeek=firstDayOfWeek.AddDays(-1);
+            }
+
+            var lunes=_context.Menus.Where(x => x.Fecha.ToShortDateString() == firstDayOfWeek.ToShortDateString()).FirstOrDefault();
+            var martes=_context.Menus.Where(x => x.Fecha.ToShortDateString() == firstDayOfWeek.AddDays(1).ToShortDateString()).FirstOrDefault();
+            var miercoles=_context.Menus.Where(x => x.Fecha.ToShortDateString() == firstDayOfWeek.AddDays(2).ToShortDateString()).FirstOrDefault();
+            var jueves=_context.Menus.Where(x => x.Fecha.ToShortDateString() == firstDayOfWeek.AddDays(3).ToShortDateString()).FirstOrDefault();
+            var viernes=_context.Menus.Where(x => x.Fecha.ToShortDateString() == firstDayOfWeek.AddDays(4).ToShortDateString()).FirstOrDefault();
+
             ViewBag.Lunes=lunes;
             ViewBag.Martes=martes;
             ViewBag.Miercoles=miercoles;

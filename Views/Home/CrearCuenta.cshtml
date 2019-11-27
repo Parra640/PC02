@@ -2,7 +2,7 @@
 
 <h1>Crear cuenta de usuario</h1>
 
-<form>
+<form method="post">
   <div class="form-row">
     @if(TempData["mensaje"]!=null){
         <div class='@TempData["tipoTexto"] my-2'>@TempData["mensaje"]</div>
@@ -21,11 +21,11 @@
     
     <div class="col-md-6 mb-3">
       <label for="validationDefault02">Contraseña </label>
-      <input type="text" asp-for="Password1" class="form-control" id="validationDefault07" placeholder="Contraseña" value="" required>
+      <input type="password" asp-for="Password1" class="form-control" id="validationDefault07" placeholder="Contraseña" value="" required>
     </div>
     <div class="col-md-6 mb-3">
       <label for="validationDefault03">Confirmar Contraseña</label>
-      <input type="text" asp-for="Password2" class="form-control" id="validationDefault08" placeholder="Contra" value="" required>
+      <input type="password" asp-for="Password2" class="form-control" id="validationDefault08" placeholder="Contra" value="" required>
     </div>     
   </div>
   

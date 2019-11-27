@@ -1,0 +1,5 @@
+1) crear la base de datos vacia con nombre: pc02db
+2) cargar el script
+3) disfrutar :)
+
+@copyright DaddyGianko (^3^)/
